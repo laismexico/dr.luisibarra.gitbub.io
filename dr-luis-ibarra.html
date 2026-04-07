@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Dr. Luis Alberto Ibarra Santoyo — Cardiólogo Clínico. INCICh · Hospital Ángeles del Pedregal CDMX · Playa del Carmen, Quintana Roo.">
+<title>Dr. Luis Alberto Ibarra Santoyo · Cardiólogo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1A2E52;--teal:#1D7A8A;--gold:#E8B84B;--light:#F4F7FA;--mid:#DDE6F0;
+  --gray:#6B7A8D;--dark:#0D1B2E;--white:#fff;--green:#1D9E75;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:#fff;color:var(--dark);overflow-x:hidden}
+
+/* ── HERO ── */
+.hero{background:var(--navy);position:relative;overflow:hidden;padding-bottom:44px}
+.hero::before{content:'';position:absolute;top:-60px;right:-100px;width:480px;height:480px;border-radius:50%;background:var(--teal);opacity:.06}
+.hero::after{content:'';position:absolute;bottom:-80px;left:-80px;width:320px;height:320px;border-radius:50%;background:var(--gold);opacity:.04}
+.ecg-bar{width:100%;height:44px;overflow:hidden;opacity:.16}
+.ecg-bar svg{width:100%;height:100%}
+.hero-inner{max-width:700px;margin:0 auto;padding:28px 24px 0;display:flex;flex-direction:column;align-items:center;text-align:center;position:relative;z-index:1;gap:20px}
+.avatar-wrap{position:relative;flex-shrink:0}
+.avatar-img{width:118px;height:118px;border-radius:50%;object-fit:cover;object-position:center top;border:3.5px solid var(--gold);display:block}
+.online-dot{position:absolute;bottom:6px;right:6px;width:18px;height:18px;background:#25D366;border-radius:50%;border:2.5px solid var(--navy)}
+.hero-text h1{font-family:'Playfair Display',serif;font-size:clamp(22px,5vw,29px);color:var(--white);line-height:1.22;margin-bottom:5px}
+.hero-text .spec{color:var(--gold);font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px}
+.hero-text .tagline{color:#90C4D4;font-size:13px;line-height:1.75;margin-bottom:5px}
+.hero-text .locs{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:14px}
+.loc-pill{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.75);font-size:11px;padding:4px 11px;border-radius:99px;display:flex;align-items:center;gap:5px}
+.cedula{color:rgba(255,255,255,.32);font-size:10.5px;margin-bottom:18px}
+.hero-btns{display:flex;flex-direction:column;gap:9px;width:100%;max-width:310px}
+.btn-gold{background:var(--gold);color:var(--navy);border:none;border-radius:99px;padding:13px 22px;font-size:13.5px;font-weight:700;font-family:'DM Sans',sans-serif;cursor:pointer;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:8px;transition:opacity .18s}
+.btn-gold:hover{opacity:.86}
+.btn-outline{background:transparent;color:rgba(255,255,255,.85);border:1.5px solid rgba(255,255,255,.25);border-radius:99px;padding:12px 22px;font-size:13px;font-family:'DM Sans',sans-serif;cursor:pointer;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:8px;transition:border-color .18s,color .18s}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+.social-row{display:flex;gap:10px;justify-content:center;margin-top:16px}
+.social-btn{width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;text-decoration:none;transition:border-color .18s;color:rgba(255,255,255,.7)}
+.social-btn:hover{border-color:var(--gold);color:var(--gold)}
+.social-btn svg{width:15px;height:15px;fill:currentColor}
+
+/* ── LAYOUT ── */
+.section{max-width:700px;margin:0 auto;padding:38px 24px}
+.section-title{display:flex;align-items:center;gap:10px;margin-bottom:18px}
+.bar{width:4px;height:20px;background:var(--gold);border-radius:2px;flex-shrink:0}
+.section-title h2{font-family:'Playfair Display',serif;font-size:19px;color:var(--navy)}
+.divider{height:1px;background:var(--mid)}
+
+/* ── SOBRE MÍ ── */
+.about-text{font-size:14.5px;line-height:1.88;color:#3a3a4a}
+
+/* ── BADGES destaque ── */
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.badge{display:flex;align-items:center;gap:6px;background:var(--light);border:1px solid var(--mid);border-radius:8px;padding:7px 12px;font-size:12px;font-weight:500;color:var(--navy)}
+.badge svg{width:14px;height:14px;fill:var(--teal);flex-shrink:0}
+
+/* ── FORMACIÓN ── */
+.timeline{display:flex;flex-direction:column;gap:0}
+.tl-item{display:flex;gap:14px;position:relative;padding-bottom:20px}
+.tl-item:last-child{padding-bottom:0}
+.tl-left{display:flex;flex-direction:column;align-items:center;width:36px;flex-shrink:0}
+.tl-dot{width:12px;height:12px;border-radius:50%;background:var(--teal);border:2px solid var(--white);box-shadow:0 0 0 2px var(--teal);flex-shrink:0;margin-top:4px}
+.tl-line{width:2px;background:var(--mid);flex:1;margin-top:4px}
+.tl-item:last-child .tl-line{display:none}
+.tl-year{font-size:11px;color:var(--teal);font-weight:500;margin-bottom:2px}
+.tl-name{font-size:13.5px;font-weight:500;color:var(--navy);line-height:1.4}
+.tl-inst{font-size:12px;color:var(--gray);margin-top:2px;line-height:1.5}
+
+/* ── ÁREAS ── */
+.pills{display:flex;flex-wrap:wrap;gap:7px}
+.pill{background:var(--light);color:var(--navy);font-size:12px;font-weight:500;padding:6px 13px;border-radius:99px;border:1px solid var(--mid)}
+.pill.highlight{background:var(--navy);color:var(--white);border-color:var(--navy)}
+
+/* ── PUBLICACIONES ── */
+.pub-list{display:flex;flex-direction:column;gap:10px}
+.pub-item{background:var(--light);border-radius:10px;padding:12px 14px;border-left:3px solid var(--teal)}
+.pub-title{font-size:13px;font-weight:500;color:var(--navy);line-height:1.5;margin-bottom:3px}
+.pub-journal{font-size:11.5px;color:var(--teal);font-weight:500}
+.pub-authors{font-size:11px;color:var(--gray);margin-top:2px;font-style:italic}
+
+/* ── DOCENCIA ── */
+.doc-list{display:flex;flex-direction:column;gap:8px}
+.doc-item{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;border-radius:8px;background:var(--light);border:1px solid var(--mid)}
+.doc-icon{width:8px;height:8px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:5px}
+.doc-name{font-size:13px;font-weight:500;color:var(--navy);line-height:1.4}
+.doc-inst{font-size:11.5px;color:var(--gray);margin-top:1px}
+
+/* ── CONSULTA ── */
+.consult-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.consult-card{background:var(--light);border-radius:12px;padding:14px 15px;border:1px solid var(--mid)}
+.consult-card.full{grid-column:1/-1}
+.consult-label{font-size:10.5px;color:var(--gray);margin-bottom:4px;font-weight:500;text-transform:uppercase;letter-spacing:.05em}
+.consult-val{font-size:13.5px;font-weight:500;color:var(--navy);line-height:1.5}
+.consult-sub{font-size:11.5px;color:var(--gray);margin-top:3px;line-height:1.5}
+
+/* ── VIDEOS ── */
+.vid-list{display:flex;flex-direction:column;gap:2px}
+.vid-item{display:flex;align-items:center;gap:12px;padding:11px 12px;border-radius:10px;text-decoration:none;transition:background .15s;cursor:pointer}
+.vid-item:hover{background:var(--light)}
+.vid-icon{width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
+.vid-title{font-size:13.5px;font-weight:500;color:var(--navy)}
+.vid-sub{font-size:11.5px;color:var(--gray);margin-top:1px}
+.vid-arrow{margin-left:auto;color:var(--teal);font-size:18px;opacity:.5}
+
+/* ── AGENDAR ── */
+.agenda-section{background:var(--navy);padding:44px 0}
+.agenda-inner{max-width:700px;margin:0 auto;padding:0 24px}
+.agenda-title{font-family:'Playfair Display',serif;font-size:22px;color:var(--white);margin-bottom:5px}
+.agenda-sub{color:#90C4D4;font-size:13px;margin-bottom:22px;line-height:1.6}
+.agenda-btns{display:flex;flex-direction:column;gap:10px;max-width:360px}
+.btn-wa{background:#25D366;color:#fff;border:none;border-radius:99px;padding:14px 22px;font-size:14px;font-weight:700;font-family:'DM Sans',sans-serif;cursor:pointer;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:9px;transition:opacity .18s}
+.btn-wa:hover{opacity:.86}
+.btn-cal{background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,.28);border-radius:99px;padding:13px 22px;font-size:13.5px;font-family:'DM Sans',sans-serif;cursor:pointer;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:9px;transition:border-color .18s,color .18s}
+.btn-cal:hover{border-color:var(--gold);color:var(--gold)}
+
+/* ── POR QUÉ CARDIÓLOGO ── */
+.wc-section{background:var(--navy);padding:52px 0}
+.wc-inner{max-width:700px;margin:0 auto;padding:0 24px}
+.wc-header{text-align:center;margin-bottom:28px}
+.wc-badge{display:inline-block;background:rgba(232,184,75,.15);color:var(--gold);
+  font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;
+  padding:5px 14px;border-radius:99px;border:1px solid rgba(232,184,75,.25);margin-bottom:12px}
+.wc-title{font-family:'Playfair Display',serif;font-size:clamp(20px,4vw,26px);
+  color:var(--white);margin-bottom:8px}
+.wc-sub{font-size:13.5px;color:#90C4D4;line-height:1.7;max-width:500px;margin:0 auto}
+.wc-tabs{display:flex;gap:4px;margin-bottom:24px;background:rgba(255,255,255,.06);
+  border-radius:99px;padding:4px;flex-wrap:wrap;justify-content:center}
+.wc-tab{background:transparent;border:none;color:rgba(255,255,255,.55);
+  font-family:'DM Sans',sans-serif;font-size:13px;padding:8px 18px;border-radius:99px;
+  cursor:pointer;transition:all .18s;white-space:nowrap}
+.wc-tab.active{background:var(--white);color:var(--navy);font-weight:500}
+.wc-panel{display:none}
+.wc-panel.active{display:block}
+.wc-panel-intro{color:#90C4D4;font-size:13px;line-height:1.7;margin-bottom:18px}
+/* Cards síntomas */
+.wc-cards{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.wc-card{background:rgba(255,255,255,.05);border-radius:12px;padding:14px;
+  border:1px solid rgba(255,255,255,.1);transition:border-color .15s}
+.wc-card:hover{border-color:rgba(255,255,255,.25)}
+.wc-card-icon{font-size:22px;margin-bottom:6px}
+.wc-card-title{font-size:13px;font-weight:500;color:var(--white);margin-bottom:4px;line-height:1.4}
+.wc-card-desc{font-size:11.5px;color:rgba(255,255,255,.55);line-height:1.6;margin-bottom:8px}
+.wc-card-tag{display:inline-block;font-size:10px;font-weight:500;padding:2px 9px;border-radius:99px}
+.red-tag{background:rgba(192,57,43,.25);color:#FF8A80}
+.amber-tag{background:rgba(232,184,75,.2);color:#FFD060}
+.teal-tag{background:rgba(29,122,138,.3);color:#80DEEA}
+/* Riesgo */
+.wc-risk-list{display:flex;flex-direction:column;gap:2px}
+.wc-risk-item{display:flex;gap:12px;align-items:flex-start;padding:12px 10px;
+  border-radius:8px;transition:background .15s}
+.wc-risk-item:hover{background:rgba(255,255,255,.05)}
+.wc-risk-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;margin-top:5px}
+.wc-risk-dot.gold{background:var(--gold)}
+.wc-risk-dot.red{background:#FF8A80}
+.wc-risk-dot.teal{background:#80DEEA}
+.wc-risk-title{font-size:13.5px;font-weight:500;color:var(--white);margin-bottom:2px}
+.wc-risk-desc{font-size:12px;color:rgba(255,255,255,.5);line-height:1.6}
+/* Preventivo */
+.wc-prev-list{display:flex;flex-direction:column;gap:2px;margin-bottom:20px}
+.wc-prev-item{display:flex;gap:14px;align-items:flex-start;padding:12px 10px;
+  border-radius:8px;border-left:2px solid transparent;transition:all .15s}
+.wc-prev-item:hover{background:rgba(255,255,255,.05);border-left-color:var(--gold)}
+.wc-prev-age{font-size:11px;font-weight:500;color:var(--gold);min-width:100px;flex-shrink:0;
+  padding-top:2px;line-height:1.4}
+.wc-prev-title{font-size:13.5px;font-weight:500;color:var(--white);margin-bottom:2px}
+.wc-prev-desc{font-size:12px;color:rgba(255,255,255,.5);line-height:1.6}
+.wc-cta-box{background:rgba(232,184,75,.1);border:1px solid rgba(232,184,75,.25);
+  border-radius:12px;padding:16px 20px;display:flex;flex-wrap:wrap;
+  align-items:center;justify-content:space-between;gap:12px}
+.wc-cta-box p{font-size:13px;color:rgba(255,255,255,.8)}
+.wc-cta-btn{background:var(--gold);color:var(--navy);font-size:13px;font-weight:700;
+  font-family:'DM Sans',sans-serif;padding:10px 20px;border-radius:99px;
+  text-decoration:none;white-space:nowrap;transition:opacity .18s}
+.wc-cta-btn:hover{opacity:.86}
+@media(max-width:480px){.wc-cards{grid-template-columns:1fr}
+  .wc-prev-age{min-width:80px;font-size:10px}}
+
+/* ── ACORDEÓN PUBLICACIONES ── */
+.accordion-btn{width:100%;background:none;border:none;cursor:pointer;
+  display:flex;align-items:center;justify-content:space-between;padding:0;
+  font-family:'DM Sans',sans-serif}
+.accordion-left{display:flex;align-items:center;gap:10px}
+.accordion-title{font-family:'Playfair Display',serif;font-size:19px;color:var(--navy)}
+.accordion-arrow{font-size:22px;color:var(--teal);transition:transform .25s;display:inline-block}
+.accordion-btn[aria-expanded="true"] .accordion-arrow{transform:rotate(90deg)}
+.accordion-body{margin-top:16px}
+
+/* ── POR QUÉ YO ── */
+.why-grid{display:grid;grid-template-columns:1fr;gap:12px}
+.why-card{display:flex;gap:14px;align-items:flex-start;padding:16px;border-radius:12px;border:1px solid var(--mid);transition:border-color .15s}
+.why-card:hover{border-color:var(--teal)}
+.why-icon{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.why-title{font-size:14px;font-weight:500;color:var(--navy);margin-bottom:4px;line-height:1.3}
+.why-desc{font-size:12.5px;color:#555;line-height:1.7}
+@media(min-width:560px){.why-grid{grid-template-columns:1fr 1fr}}
+
+/* ── FOOTER ── */
+footer{background:var(--dark);padding:24px;text-align:center}
+footer p{font-size:11px;color:#4A7A9B;line-height:1.9}
+
+/* ── ANIMACIONES ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.hero-inner>*{animation:fadeUp .55s ease both}
+.hero-inner>*:nth-child(1){animation-delay:.04s}
+.hero-inner>*:nth-child(2){animation-delay:.12s}
+.hero-inner>*:nth-child(3){animation-delay:.2s}
+
+/* ── RESPONSIVE ── */
+@media(min-width:580px){
+  .hero-inner{flex-direction:row;text-align:left;align-items:flex-start;padding-top:44px}
+  .hero-text .locs{justify-content:flex-start}
+  .hero-btns{flex-direction:row;max-width:none}
+  .social-row{justify-content:flex-start}
+  .avatar-img{width:130px;height:130px}
+}
+</style>
+</head>
+<body>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="ecg-bar">
+    <svg viewBox="0 0 1200 44" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <polyline fill="none" stroke="#E8B84B" stroke-width="2" stroke-linecap="round"
+        points="0,22 60,22 78,22 88,12 98,22 108,22 112,16 116,36 120,6 124,26 134,22 158,22
+                200,22 218,22 228,12 238,22 248,22 252,16 256,36 260,6 264,26 274,22 298,22
+                360,22 378,22 388,12 398,22 408,22 412,16 416,36 420,6 424,26 434,22 458,22
+                520,22 538,22 548,12 558,22 568,22 572,16 576,36 580,6 584,26 594,22 618,22
+                680,22 698,22 708,12 718,22 728,22 732,16 736,36 740,6 744,26 754,22 778,22
+                840,22 858,22 868,12 878,22 888,22 892,16 896,36 900,6 904,26 914,22 938,22
+                1000,22 1018,22 1028,12 1038,22 1048,22 1052,16 1056,36 1060,6 1064,26 1074,22 1098,22
+                1160,22 1178,22 1188,12 1200,22"/>
+    </svg>
+  </div>
+  <div class="hero-inner">
+    <div class="avatar-wrap">
+      <img class="avatar-img" src="data:image/jpeg;base64,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" alt="Dr. Luis Alberto Ibarra Santoyo, Cardiólogo">
+      <div class="online-dot" title="Disponible para citas"></div>
+    </div>
+    <div class="hero-text">
+      <p class="spec">Cardiólogo Clínico · INCICh</p>
+      <h1>Dr. Luis Alberto<br>Ibarra Santoyo</h1>
+      <p class="tagline">
+        Especialista egresado del Instituto Nacional de Cardiología<br>
+        Ignacio Chávez · Docente · Fundador de EasyENARM
+      </p>
+      <div class="locs">
+        <span class="loc-pill">
+          <svg viewBox="0 0 24 24" width="11" height="11" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          Ángeles del Pedregal, CDMX
+        </span>
+        <span class="loc-pill">
+          <svg viewBox="0 0 24 24" width="11" height="11" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          Playa del Carmen, Quintana Roo
+        </span>
+      </div>
+      <p class="cedula">Cédula profesional: 15558811</p>
+      <div class="hero-btns">
+        <a class="btn-gold" href="#agendar">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Agendar mi cita
+        </a>
+        <a class="btn-outline" href="#videos">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          Videos educativos
+        </a>
+      </div>
+      <div class="social-row">
+        <a class="social-btn" href="https://instagram.com/dr.luisibarra" target="_blank" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a class="social-btn" href="https://tiktok.com/@dr.luisibarra" target="_blank" aria-label="TikTok">
+          <svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+        </a>
+        <a class="social-btn" href="https://wa.me/525555084160" target="_blank" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ POR QUÉ CARDIÓLOGO ══ -->
+<section class="wc-section">
+  <div class="wc-inner">
+    <div class="wc-header">
+      <div class="wc-badge">Prevención y salud cardiovascular</div>
+      <h2 class="wc-title">¿Por qué ir al cardiólogo?</h2>
+      <p class="wc-sub">No solo cuando hay una enfermedad. Tu corazón merece atención antes de que aparezcan los síntomas.</p>
+    </div>
+    <div class="wc-tabs" id="wcTabs">
+      <button class="wc-tab active" onclick="switchTab('sintomas',this)">Tengo síntomas</button>
+      <button class="wc-tab" onclick="switchTab('riesgo',this)">Factores de riesgo</button>
+      <button class="wc-tab" onclick="switchTab('preventivo',this)">Revisión preventiva</button>
+    </div>
+    <div class="wc-panel active" id="tab-sintomas">
+      <p class="wc-panel-intro">Estos síntomas no siempre indican urgencia, pero ninguno debe ignorarse.</p>
+      <div class="wc-cards">
+        <div class="wc-card"><div class="wc-card-icon">⚡</div><div class="wc-card-title">Dolor o presión en el pecho</div><div class="wc-card-desc">Opresión, ardor o pesadez, con o sin irradiación al brazo o mandíbula.</div><span class="wc-card-tag red-tag">Urgente</span></div>
+        <div class="wc-card"><div class="wc-card-icon">💨</div><div class="wc-card-title">Falta de aire</div><div class="wc-card-desc">Dificultad para respirar en reposo o ante esfuerzos que antes hacías sin problema.</div><span class="wc-card-tag amber-tag">Evaluar pronto</span></div>
+        <div class="wc-card"><div class="wc-card-icon">💓</div><div class="wc-card-title">Palpitaciones</div><div class="wc-card-desc">Latidos irregulares, muy rápidos o la sensación de que el corazón "se salta" un latido.</div><span class="wc-card-tag amber-tag">Evaluar pronto</span></div>
+        <div class="wc-card"><div class="wc-card-icon">💫</div><div class="wc-card-title">Mareos o desmayos</div><div class="wc-card-desc">Episodios de mareo intenso, visión borrosa o pérdida de conciencia sin causa aparente.</div><span class="wc-card-tag amber-tag">Evaluar pronto</span></div>
+        <div class="wc-card"><div class="wc-card-icon">🦵</div><div class="wc-card-title">Hinchazón de piernas</div><div class="wc-card-desc">Edema en tobillos que aparece al final del día o no mejora con el reposo.</div><span class="wc-card-tag teal-tag">Consultar</span></div>
+        <div class="wc-card"><div class="wc-card-icon">😴</div><div class="wc-card-title">Fatiga inusual</div><div class="wc-card-desc">Cansancio desproporcionado ante esfuerzos cotidianos que antes no te agotaban.</div><span class="wc-card-tag teal-tag">Consultar</span></div>
+      </div>
+    </div>
+    <div class="wc-panel" id="tab-riesgo">
+      <p class="wc-panel-intro">Tener uno o más de estos factores aumenta tu riesgo aunque te sientas perfectamente bien.</p>
+      <div class="wc-risk-list">
+        <div class="wc-risk-item"><div class="wc-risk-dot gold"></div><div><div class="wc-risk-title">Hipertensión arterial</div><div class="wc-risk-desc">La "enfermedad silenciosa" — puede dañar el corazón años antes de que notes algo.</div></div></div>
+        <div class="wc-risk-item"><div class="wc-risk-dot gold"></div><div><div class="wc-risk-title">Diabetes o glucosa elevada</div><div class="wc-risk-desc">La diabetes multiplica el riesgo de infarto y enfermedad coronaria.</div></div></div>
+        <div class="wc-risk-item"><div class="wc-risk-dot gold"></div><div><div class="wc-risk-title">Colesterol o triglicéridos altos</div><div class="wc-risk-desc">Las dislipidemias acumulan placa en las arterias sin síntomas durante años.</div></div></div>
+        <div class="wc-risk-item"><div class="wc-risk-dot red"></div><div><div class="wc-risk-title">Tabaquismo</div><div class="wc-risk-desc">Fumar duplica el riesgo de infarto incluso en personas jóvenes y sin otros factores.</div></div></div>
+        <div class="wc-risk-item"><div class="wc-risk-dot red"></div><div><div class="wc-risk-title">Obesidad o sobrepeso</div><div class="wc-risk-desc">El exceso de peso aumenta la carga sobre el corazón y el riesgo de HAS y diabetes.</div></div></div>
+        <div class="wc-risk-item"><div class="wc-risk-dot red"></div><div><div class="wc-risk-title">Antecedentes familiares</div><div class="wc-risk-desc">Padre, madre o hermano con infarto antes de los 55 años eleva tu riesgo genético.</div></div></div>
+        <div class="wc-risk-item"><div class="wc-risk-dot teal"></div><div><div class="wc-risk-title">Vida sedentaria</div><div class="wc-risk-desc">La inactividad física es un factor de riesgo independiente para enfermedad cardiovascular.</div></div></div>
+        <div class="wc-risk-item"><div class="wc-risk-dot teal"></div><div><div class="wc-risk-title">Estrés crónico</div><div class="wc-risk-desc">El estrés sostenido eleva la presión y favorece hábitos que dañan el corazón a largo plazo.</div></div></div>
+      </div>
+    </div>
+    <div class="wc-panel" id="tab-preventivo">
+      <p class="wc-panel-intro">Según las guías internacionales de cardiología, estas son las revisiones que todos debemos hacernos aunque nos sintamos bien.</p>
+      <div class="wc-prev-list">
+        <div class="wc-prev-item"><div class="wc-prev-age">Desde los 18 años</div><div class="wc-prev-content"><div class="wc-prev-title">Medición de presión arterial</div><div class="wc-prev-desc">Al menos una vez al año. La hipertensión no duele — se detecta midiendo.</div></div></div>
+        <div class="wc-prev-item"><div class="wc-prev-age">Desde los 20 años</div><div class="wc-prev-content"><div class="wc-prev-title">Perfil de lípidos (colesterol y triglicéridos)</div><div class="wc-prev-desc">Primera medición a los 20 años, luego cada 5 años si es normal. Antes si hay antecedentes familiares.</div></div></div>
+        <div class="wc-prev-item"><div class="wc-prev-age">Desde los 35 años</div><div class="wc-prev-content"><div class="wc-prev-title">Electrocardiograma basal</div><div class="wc-prev-desc">Un ECG de referencia permite detectar arritmias silenciosas y cambios isquémicos.</div></div></div>
+        <div class="wc-prev-item"><div class="wc-prev-age">Desde los 40 años</div><div class="wc-prev-content"><div class="wc-prev-title">Evaluación de riesgo cardiovascular global</div><div class="wc-prev-desc">Cálculo del riesgo a 10 años con escala SCORE2. Una consulta puede cambiar tu plan preventivo.</div></div></div>
+        <div class="wc-prev-item"><div class="wc-prev-age">Antes de cirugía</div><div class="wc-prev-content"><div class="wc-prev-title">Valoración cardiovascular preoperatoria</div><div class="wc-prev-desc">Obligatoria antes de cualquier cirugía mayor, especialmente en mayores de 40 años o con factores de riesgo.</div></div></div>
+        <div class="wc-prev-item"><div class="wc-prev-age">Deportistas</div><div class="wc-prev-content"><div class="wc-prev-title">Valoración cardiovascular deportiva</div><div class="wc-prev-desc">Si practicas deporte intenso o competitivo, el chequeo cardiológico es parte del entrenamiento.</div></div></div>
+      </div>
+      <div class="wc-cta-box">
+        <p>¿No sabes si te corresponde alguna de estas revisiones?</p>
+        <a href="#agendar" class="wc-cta-btn">Consúltame por WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SOBRE MÍ ══ -->
+<div class="divider"></div>
+<div class="section">
+  <div class="section-title"><span class="bar"></span><h2>Sobre mí</h2></div>
+  <p class="about-text">Soy cardiólogo clínico egresado del <strong>Instituto Nacional de Cardiología Ignacio Chávez (INCICh)</strong>, centro de referencia cardiovascular de México y América Latina. Me especializo en el diagnóstico y tratamiento de enfermedades del corazón, con particular interés en <strong>síndromes coronarios agudos</strong>, hipertensión arterial, arritmias e insuficiencia cardíaca.<br><br>Combino la práctica clínica con una profunda vocación docente: soy <strong>fundador de EasyENARM</strong>, plataforma de educación médica para preparación al examen nacional de residencias, y docente en la <strong>Universidad La Salle</strong> y la UNAM. Creo en una medicina que acompaña al paciente más allá del consultorio.</p>
+  <div class="badges">
+    <div class="badge">
+      <svg viewBox="0 0 24 24"><path d="M12 3L1 9l4 2.18V15c0 3 4 5 7 5s7-2 7-5v-3.82L23 9 12 3z"/></svg>
+      Fundador EasyENARM
+    </div>
+    <div class="badge">
+      <svg viewBox="0 0 24 24"><path d="M12 3L1 9l4 2.18V15c0 3 4 5 7 5s7-2 7-5v-3.82L23 9 12 3z"/></svg>
+      Docente UNAM · La Salle
+    </div>
+    <div class="badge">
+      <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/></svg>
+      Coord. Educación SMC 2026–2028
+    </div>
+    <div class="badge">
+      <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/></svg>
+      Ponente ESC 2025
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══ FORMACIÓN ══ -->
+<div class="section">
+  <div class="section-title"><span class="bar"></span><h2>Formación académica</h2></div>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div><div class="tl-year">2022 – 2026</div><div class="tl-name">Especialidad en Cardiología Clínica</div><div class="tl-inst">Instituto Nacional de Cardiología Ignacio Chávez (INCICh) · Ciudad de México</div></div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div><div class="tl-year">2020 – 2022</div><div class="tl-name">Formación en Medicina Interna</div><div class="tl-inst">Hospital General Dr. Manuel Gea González · CDMX</div></div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div><div class="tl-year">2019</div><div class="tl-name">Servicio Social — Investigación en Terapia Intensiva</div><div class="tl-inst">Instituto Nacional de Cardiología Ignacio Chávez – CIFRHS</div></div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div><div class="tl-year">2018</div><div class="tl-name">Internado Médico</div><div class="tl-inst">Hospital General Dr. Manuel Gea González · CDMX</div></div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div><div class="tl-year">2011 – 2017</div><div class="tl-name">Licenciatura en Medicina · Cédula 15558811</div><div class="tl-inst">Universidad La Salle · Ciudad de México</div></div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-dot" style="background:var(--gold)"></div><div class="tl-line"></div></div>
+      <div><div class="tl-year">Bachillerato</div><div class="tl-name">Instituto Tecnológico de Estudios Superiores de Monterrey</div><div class="tl-inst">ITESM Campus Ciudad de México</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══ ÁREAS ══ -->
+<div class="section">
+  <div class="section-title"><span class="bar"></span><h2>Áreas de atención</h2></div>
+  <div class="pills">
+    <span class="pill highlight">Síndromes coronarios agudos</span>
+    <span class="pill">Hipertensión arterial</span>
+    <span class="pill">Insuficiencia cardíaca</span>
+    <span class="pill">Arritmias · Fibrilación auricular</span>
+    <span class="pill">Valvulopatías</span>
+    <span class="pill">Miocardiopatías</span>
+    <span class="pill">Síncope</span>
+    <span class="pill">Lípidos y dislipidemia</span>
+    <span class="pill">Valoración preoperatoria</span>
+    <span class="pill">Holter de ritmo</span>
+    <span class="pill">MAPA de presión arterial</span>
+    <span class="pill">Prueba de esfuerzo</span>
+    <span class="pill">Electrocardiograma</span>
+    <span class="pill">Prevención cardiovascular</span>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══ POR QUÉ YO ══ -->
+<div class="section" id="porqueyyo">
+  <div class="section-title"><span class="bar"></span><h2>¿Por qué atenderte conmigo?</h2></div>
+  <div class="why-grid">
+
+    <div class="why-card">
+      <div class="why-icon" style="background:#E8F6F3;color:#085041">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+      </div>
+      <div class="why-title">Videos educativos para ti</div>
+      <div class="why-desc">Cada paciente recibe acceso a videos cortos que explican en lenguaje claro su diagnóstico, sus medicamentos y cuándo acudir a urgencias. Entender tu enfermedad es parte del tratamiento.</div>
+    </div>
+
+    <div class="why-card">
+      <div class="why-icon" style="background:#E6F1FB;color:#0C447C">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+      </div>
+      <div class="why-title">Bitácora de seguimiento personal</div>
+      <div class="why-desc">Te entrego una bitácora personalizada para registrar tu presión, glucosa, peso y síntomas. Tu cardiólogo puede revisar tu evolución en cada consulta con datos reales, no solo recuerdos.</div>
+    </div>
+
+    <div class="why-card">
+      <div class="why-icon" style="background:#EEEDFE;color:#3C3489">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 3L1 9l4 2.18V15c0 3 4 5 7 5s7-2 7-5v-3.82L23 9 12 3z"/></svg>
+      </div>
+      <div class="why-title">Formación de alto nivel</div>
+      <div class="why-desc">Egresado del INCICh, uno de los centros cardiológicos más importantes de América Latina, con publicaciones en revistas internacionales y presentaciones en congresos como la European Society of Cardiology.</div>
+    </div>
+
+    <div class="why-card">
+      <div class="why-icon" style="background:#FEF0E6;color:#854F0B">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M13 2.05v2.02c3.95.49 7 3.85 7 7.93 0 3.21-1.81 6-4.72 7.72L13 17v5h5l-1.22-1.22C19.91 19.07 22 15.76 22 12c0-5.18-3.95-9.45-9-9.95zM11 2.05C5.95 2.55 2 6.82 2 12c0 3.76 2.09 7.07 5.22 8.78L6 22h5v-5l-2.28 2.28C7.81 18 6 15.21 6 12c0-4.08 3.05-7.44 7-7.93V2.05z"/></svg>
+      </div>
+      <div class="why-title">Atención actualizada y accesible</div>
+      <div class="why-desc">Uso de tecnología digital para facilitar el seguimiento: WhatsApp, agenda en línea, y herramientas de inteligencia artificial para la gestión de tu expediente. Sin filas, sin demoras innecesarias.</div>
+    </div>
+
+    <div class="why-card">
+      <div class="why-icon" style="background:#E8F6F3;color:#085041">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+      </div>
+      <div class="why-title">Medicina con vocación</div>
+      <div class="why-desc">Más allá del diagnóstico, me interesa que salgas de la consulta sintiéndote escuchado, con un plan claro y sabiendo exactamente qué hacer. La relación médico-paciente es la base de todo buen tratamiento.</div>
+    </div>
+
+    <div class="why-card">
+      <div class="why-icon" style="background:#E6F1FB;color:#0C447C">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+      </div>
+      <div class="why-title">Dos sedes · Una misma atención</div>
+      <div class="why-desc">Consulta disponible en Ciudad de México (Ángeles del Pedregal) y Playa del Carmen, Quintana Roo. Si eres paciente en una ciudad y viajas, tu atención cardiológica viaja contigo.</div>
+    </div>
+
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══ DOCENCIA ══ -->
+<div class="section">
+  <div class="section-title"><span class="bar"></span><h2>Docencia y actividad académica</h2></div>
+  <div class="doc-list">
+    <div class="doc-item"><div class="doc-icon"></div><div><div class="doc-name">Fundador y Director — EasyENARM</div><div class="doc-inst">Plataforma de educación médica para preparación al ENARM · 2024 – presente</div></div></div>
+    <div class="doc-item"><div class="doc-icon"></div><div><div class="doc-name">Docente de Cardiología Clínica</div><div class="doc-inst">Universidad La Salle y UNAM · 2011 – presente</div></div></div>
+    <div class="doc-item"><div class="doc-icon"></div><div><div class="doc-name">Coordinador de Educación Médica</div><div class="doc-inst">Sociedad Mexicana de Cardiología · 2026 – 2028</div></div></div>
+    <div class="doc-item"><div class="doc-icon"></div><div><div class="doc-name">Fundador — Curso de Electrocardiografía Clínica</div><div class="doc-inst">Universidad La Salle · desde 2021 · Ponente ESC 2025 · Asociación de Médicos en Formación Latinoamérica 2023–2025</div></div></div>
+    <div class="doc-item"><div class="doc-icon"></div><div><div class="doc-name">Fundador — Easy-G</div><div class="doc-inst">Interpretación a distancia de electrocardiogramas · 2023 – 2024</div></div></div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══ PUBLICACIONES (ACORDEÓN) ══ -->
+<div class="section">
+  <button class="accordion-btn" onclick="toggleAccordion(this)" aria-expanded="false">
+    <div class="accordion-left">
+      <span class="bar" style="height:16px"></span>
+      <span class="accordion-title">Publicaciones científicas</span>
+    </div>
+    <span class="accordion-arrow">›</span>
+  </button>
+  <div class="accordion-body" hidden>
+    <div class="pub-list">
+      <div class="pub-item">
+        <div class="pub-title">Predictors of cardiogenic shock in takotsubo syndrome: Insights from a Mexican population</div>
+        <div class="pub-journal">European Heart Journal · 2025</div>
+        <div class="pub-authors">Ibarra-Santoyo LA, Rojas-Velasco GR, Martínez-Sánchez FD et al. · Presentado ESC Congress 2025</div>
+      </div>
+      <div class="pub-item">
+        <div class="pub-title">Current approach in the management of early and late complications in heart transplantation: A case report</div>
+        <div class="pub-journal">Archivos de Cardiología de México · 2025</div>
+        <div class="pub-authors">Ibarra-Santoyo LA, Hernández-Badillo LE, Brenes-Castro DA et al.</div>
+      </div>
+      <div class="pub-item">
+        <div class="pub-title">Acute kidney injury in patients with severe COVID-19: Clinical course, risk factors, and outcomes</div>
+        <div class="pub-journal">Nefrología Latinoamericana · 2024</div>
+        <div class="pub-authors">Martínez-Sánchez FD, González-Sánchez HR, Ibarra-Santoyo LA et al.</div>
+      </div>
+      <div class="pub-item">
+        <div class="pub-title">Capítulo: Infarto agudo al miocardio — Cardiología y el médico de primer contacto</div>
+        <div class="pub-journal">Editorial Intersistemas · 1ra edición 2025</div>
+      </div>
+      <div class="pub-item">
+        <div class="pub-title">Capítulo: Electrocardiograma en la cardiopatía isquémica — Cardiología para médicos no especialistas</div>
+        <div class="pub-journal">Editorial Pydesa · 2024</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══ CONSULTA ══ -->
+<div class="section">
+  <div class="section-title"><span class="bar"></span><h2>Información de consulta</h2></div>
+  <div class="consult-grid">
+    <div class="consult-card full">
+      <div class="consult-label">📍 CDMX</div>
+      <div class="consult-val">Hospital Ángeles del Pedregal</div>
+      <div class="consult-sub">Camino a Santa Teresa 1055, Héroes de Padierna, Alcaldía Magdalena Contreras · 1ª y 4ª semana de cada mes</div>
+    </div>
+    <div class="consult-card full">
+      <div class="consult-label">📍 Quintana Roo</div>
+      <div class="consult-val">Playa del Carmen, Quintana Roo</div>
+      <div class="consult-sub">Consulta disponible · Fechas por confirmar · Envía mensaje para más información</div>
+    </div>
+    <div class="consult-card full">
+      <div class="consult-label">Costo de consulta</div>
+      <div class="consult-val">¿Te interesa agendar una cita?</div>
+      <div class="consult-sub">Manda un mensaje por WhatsApp y con gusto te informamos disponibilidad y costos</div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══ VIDEOS ══ -->
+<div class="section" id="videos">
+  <div class="section-title"><span class="bar"></span><h2>Videos educativos para pacientes</h2></div>
+  <div class="vid-list">
+    <a class="vid-item" href="#">
+      <div class="vid-icon" style="background:#E8F6F3">🫀</div>
+      <div><div class="vid-title">Hipertensión arterial</div><div class="vid-sub">Qué es, cómo controlarla y tus medicamentos</div></div>
+      <span class="vid-arrow">›</span>
+    </a>
+    <a class="vid-item" href="#">
+      <div class="vid-icon" style="background:#FEF0E6">⚡</div>
+      <div><div class="vid-title">Síndromes coronarios · Infarto</div><div class="vid-sub">Síntomas de alarma, qué hacer y recuperación</div></div>
+      <span class="vid-arrow">›</span>
+    </a>
+    <a class="vid-item" href="#">
+      <div class="vid-icon" style="background:#EEEDFE">💓</div>
+      <div><div class="vid-title">Arritmias cardíacas</div><div class="vid-sub">FA, palpitaciones y marcapasos explicados</div></div>
+      <span class="vid-arrow">›</span>
+    </a>
+    <a class="vid-item" href="#">
+      <div class="vid-icon" style="background:#E8F6F3">🔬</div>
+      <div><div class="vid-title">Enfermedades valvulares</div><div class="vid-sub">Estenosis, insuficiencia y cuándo operar</div></div>
+      <span class="vid-arrow">›</span>
+    </a>
+    <a class="vid-item" href="#">
+      <div class="vid-icon" style="background:#E6F1FB">🩺</div>
+      <div><div class="vid-title">Estudios cardiológicos</div><div class="vid-sub">Holter, MAPA, prueba de esfuerzo y eco</div></div>
+      <span class="vid-arrow">›</span>
+    </a>
+  </div>
+</div>
+
+<!-- ══ AGENDAR ══ -->
+<section class="agenda-section" id="agendar">
+  <div class="agenda-inner">
+    <h2 class="agenda-title">Agendar mi cita</h2>
+    <p class="agenda-sub">Atención en Ángeles del Pedregal, CDMX y Playa del Carmen, Quintana Roo.<br>Escríbeme y te confirmo disponibilidad.</p>
+    <div class="agenda-btns">
+      <a class="btn-wa" href="https://wa.me/525555084160?text=Hola%20Dr.%20Ibarra%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita%20de%20cardiolog%C3%ADa." target="_blank">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp · 55 5508 4160
+      </a>
+      <a class="btn-cal" href="https://calendly.com/drluisibarra" target="_blank">
+        <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
+        Agendar en línea · Calendly
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>
+    Dr. Luis Alberto Ibarra Santoyo · Cardiólogo Clínico<br>
+    INCICh · Universidad La Salle · Cédula Profesional 15558811<br>
+    Hospital Ángeles del Pedregal, CDMX · Playa del Carmen, Quintana Roo<br>
+    <a href="/cdn-cgi/l/email-protection#cda1b8a4be92a4afacbfbfac92beaca3b9a2b4a28da2b8b9a1a2a2a6e3aea2a0" style="color:#4A7A9B;text-decoration:none"><span class="__cf_email__" data-cfemail="48243d213b17212a293a3a29
